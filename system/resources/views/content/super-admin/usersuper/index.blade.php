@@ -12,7 +12,7 @@
         </div>
         <div class="ms-auto">
             <div class="btn-group">
-                <a href="{{ url('master-data/usersupersuper/create') }}" class="btn btn-light" data-bs-toggle="modal"
+                <a href="{{ url('master-data/usersuper/create') }}" class="btn btn-light" data-bs-toggle="modal"
                     data-bs-target="#exampleModal"><i class="bx bx-plus me-1"></i>
                     Add New Admin</a>
             </div>

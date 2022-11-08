@@ -18,48 +18,31 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="card">
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table id="example" class="table table-striped table-bordered" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                {{-- <th>Name</th> --}}
-                                <th>Deskripsi</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($list_iklan as $iklan)
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    {{-- <td>{{ $iklan->nama }}</td> --}}
-                                    <td>{{ $iklan->deskripsi }}</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <a href="{{ url('data-manager/iklan', $iklan->id) }}" class="btn btn-info"
-                                                title="Info"><i class="bx bx-detail"></i></a>
-                                        </div>
-                                        <div class="btn-group">
-                                            <a href="{{ url('data-manager/iklan', $iklan->id) }}/edit"
-                                                class="btn btn-warning" title="Edit"><i
-                                                    class="bx bx-edit"></i></a>
-                                        </div>
-                                        <div class="btn-group">
-                                            @include('utils.delete', [
-                                                'url' => url('data-manager/iklan', $iklan->id),
-                                            ])
-                                        </div>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 product-grid">
+        @foreach ($list_iklan as $iklan)
+            <div class="col">
+                <div class="card">
+                    <img src="{{ url('public', $iklan->foto) }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title">{{ $iklan->deskripsi }}</h6>
+                        <div class="clearfix">
+                            <p class="mb-0 float-start">{{ $iklan->created_at->format('d F Y') }}</p>
+                            <div class="float-end">
+                                <div class="btn-group">
+                                    <a href="{{ url('data-manager/iklan', $iklan->id) }}/edit" class="btn btn-warning"
+                                        title="Edit"><i class="bx bx-edit"></i></a>
+                                </div>
+                                <div class="btn-group">
+                                    @include('utils.delete', [
+                                        'url' => url('data-manager/iklan', $iklan->id),
+                                    ])
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endforeach
     </div>
 
     <!-- Modal Create-->

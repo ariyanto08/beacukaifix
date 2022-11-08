@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--favicon-->
-	<link rel="icon" href="{{url('public')}}/assets/images/favicon-32x32.png" type="image/png" />
+	<link rel="icon" href="{{url('public')}}/assets/images/logo-FIX.png" type="image/png" />
 	<!--plugins-->
 	<link href="{{url('public')}}/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
 	<link href="{{url('public')}}/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
@@ -23,7 +23,7 @@
 	<link rel="stylesheet" href="{{url('public')}}/assets/css/dark-theme.css" />
 	<link rel="stylesheet" href="{{url('public')}}/assets/css/semi-dark.css" />
 	<link rel="stylesheet" href="{{url('public')}}/assets/css/header-colors.css" />
-	<title>Dashtrans - Operational</title>
+	<title>BeaCukai - Operational</title>
 </head>
 
 <body class="bg-theme bg-theme2">
@@ -39,7 +39,7 @@
 		<div class="page-wrapper">
 			<div class="page-content">
                 @include('utils.notif')
-                <div style="height: 800px;">
+                <div style="height: 1000px;">
 
 				    @yield('content')
 
@@ -53,7 +53,7 @@
 		<!--end overlay-->
 		<!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
 		<!--End Back To Top Button-->
-        @include('section.admin.footer')
+        {{-- @include('section.admin.footer') --}}
 	</div>
 	<!--end wrapper-->
 	<!--start switcher-->

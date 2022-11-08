@@ -18,51 +18,36 @@
             </div>
         </div>
     </div>
+
     <div class="row">
-        <div class="card">
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table id="example" class="table table-striped table-bordered" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Judul</th>
-                                {{-- <th>Penulis</th> --}}
-                                <th>Kategori</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($list_berita as $berita)
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $berita->nama }}</td>
-                                    {{-- <td>{{ $berita->penulis }}</td> --}}
-                                    <td>{{ $berita->kategori }}</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <a href="{{ url('data-manager/berita', $berita->id) }}" class="btn btn-info"
-                                                title="Info"><i class="bx bx-detail"></i></a>
-                                        </div>
-                                        <div class="btn-group">
-                                            <a href="{{ url('data-manager/berita', $berita->id) }}/edit"
-                                                class="btn btn-warning" title="Edit"><i
-                                                    class="bx bx-edit"></i></a>
-                                        </div>
-                                        <div class="btn-group">
-                                            @include('utils.delete', [
-                                                'url' => url('data-manager/berita', $berita->id),
-                                            ])
-                                        </div>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+        <div class="col">
+            <div class="berita row row-cols-2 row-cols-md-4">
+                    @foreach ($list_berita as $berita)
+                    <div class="col mb-4 pl-2 pr-2">
+                        <div class="card">
+                            <img src="{{ url('public', $berita->foto) }}" class="image-fluid" alt="">
+                            <div class="card-body">
+                                <a href="{{ url('data-manager/berita', $berita->id) }}"><h5>{{ $berita->nama }}</h5></a>
+                                <p>{{ $berita->created_at->format("d F Y") }}</p>
+                                <span>Kategori: {{ $berita->kategori }}</span>
+                                <div class="float-end">
+                                    <div class="btn-group">
+                                        <a href="{{ url('data-manager/berita', $berita->id) }}/edit" class="btn btn-warning"
+                                            title="Edit"><i class="bx bx-edit"></i></a>
+                                    </div>
+                                    <div class="btn-group">
+                                        @include('utils.delete', [
+                                            'url' => url('data-manager/berita', $berita->id),
+                                        ])
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
-    </div>
 
     <!-- Modal Create-->
     <div class="modal fade" id="exampleExtraLargeModal" tabindex="-1" aria-labelledby="exampleExtraLargeModal"

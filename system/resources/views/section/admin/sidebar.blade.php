@@ -1,10 +1,10 @@
 <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div>
-            <img src="{{url('public')}}/assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
+            <img src="{{url('public')}}/assets/images/logo-FIX.png" class="logo-icon" alt="logo icon">
         </div>
         <div>
-            <h4 class="logo-text">Dashtrans</h4>
+            <h4 class="logo-text">BeaCukai</h4>
         </div>
         <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
         </div>
@@ -19,30 +19,30 @@
             </a>
         </li>
         <li>
-            <a href="javascript:;" class="has-arrow">
+            <a class="has-arrow">
                 <div class="parent-icon"><i class="bx bx-desktop"></i>
                 </div>
                 <div class="menu-title">Profile Web</div>
             </a>
             <ul>
-                <li> <a href="app-emailbox.html"><i class="bx bx-right-arrow-alt"></i>Profil</a>
+                <li> <a href="{{url('data-manager/profil')}}"><i class="bx bx-right-arrow-alt"></i>Profil</a>
                 </li>
-                <li> <a href="app-chat-box.html"><i class="bx bx-right-arrow-alt"></i>Visi Misi</a>
+                <li> <a href="{{url('data-manager/visi')}}"><i class="bx bx-right-arrow-alt"></i>Visi Misi</a>
                 </li>
-                <li> <a href="app-file-manager.html"><i class="bx bx-right-arrow-alt"></i>Struktur Organisasi</a>
+                <li> <a href="{{url('data-manager/struktur')}}"><i class="bx bx-right-arrow-alt"></i>Struktur Organisasi</a>
                 </li>
-                <li> <a href="app-contact-list.html"><i class="bx bx-right-arrow-alt"></i>Komposisi Pegawai</a>
+                <li> <a href="{{url('data-manager/komposisi')}}"><i class="bx bx-right-arrow-alt"></i>Komposisi Pegawai</a>
                 </li>
-                <li> <a href="app-to-do.html"><i class="bx bx-right-arrow-alt"></i>Wilayah Kerja</a>
+                <li> <a href="{{url('data-manager/wilayah')}}"><i class="bx bx-right-arrow-alt"></i>Wilayah Kerja</a>
                 </li>
-                <li> <a href="app-invoice.html"><i class="bx bx-right-arrow-alt"></i>Janji Layanan</a>
+                <li> <a href="{{url('data-manager/janji')}}"><i class="bx bx-right-arrow-alt"></i>Janji Layanan</a>
                 </li>
-                <li> <a href="app-fullcalender.html"><i class="bx bx-right-arrow-alt"></i>Maklumat Pelayana</a>
+                <li> <a href="{{url('data-manager/maklumat')}}"><i class="bx bx-right-arrow-alt"></i>Maklumat Pelayanan</a>
                 </li>
             </ul>
         </li>
         <li>
-            <a href="javascript:;" class="has-arrow">
+            <a class="has-arrow">
                 <div class="parent-icon"><i class='bx bx-repeat'></i>
                 </div>
                 <div class="menu-title">Publikasi</div>
@@ -57,7 +57,7 @@
             </ul>
         </li>
         <li>
-            <a class="has-arrow" href="javascript:;">
+            <a class="has-arrow">
                 <div class="parent-icon"><i class='bx bx-book-content'></i>
                 </div>
                 <div class="menu-title">Peraturan</div>

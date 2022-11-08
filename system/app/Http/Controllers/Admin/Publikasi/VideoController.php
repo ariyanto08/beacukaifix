@@ -19,9 +19,7 @@ class VideoController extends Controller
     function store()
     {
         $video = new Video();
-        $video->nama = request('nama');
         $video->link = request('link');
-        $video->deskripsi = request('deskripsi');
         $video->save();
 
         return redirect('data-manager/video')->with('success', 'Data Berhasil Ditambahkan');
@@ -39,9 +37,7 @@ class VideoController extends Controller
     }
     function update(Video $video)
     {
-        $video->nama = request('nama');
         $video->link = request('link');
-        $video->deskripsi = request('deskripsi');
         $video->save();
         return redirect('data-manager/video')->with('success', 'Data Berhasil Diedit');
     }

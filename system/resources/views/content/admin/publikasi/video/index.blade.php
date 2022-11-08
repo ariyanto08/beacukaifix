@@ -18,52 +18,28 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="card">
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table id="example" class="table table-striped table-bordered" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                {{-- <th>Nama</th> --}}
-                                <th>Link</th>
-                                <th>Deskripsi</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($list_video as $video)
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    {{-- <td>{{ $video->nama }}</td> --}}
-                                    <td>{{ $video->link }}</td>
-                                    <td>{{ $video->deskripsi }}</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <a href="{{ url('data-manager/video', $video->id) }}" class="btn btn-info"
-                                                title="Info"><i class="bx bx-detail"></i></a>
-                                        </div>
-                                        <div class="btn-group">
-                                            <a href="{{ url('data-manager/video', $video->id) }}/edit"
-                                                class="btn btn-warning" title="Edit"><i
-                                                    class="bx bx-edit"></i></a>
-                                        </div>
-                                        <div class="btn-group">
-                                            @include('utils.delete', [
-                                                'url' => url('data-manager/video', $video->id),
-                                            ])
-                                        </div>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 product-grid">
+        @foreach ($list_video as $video)
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <iframe height="270" class="card-img-top"src="{{ $video->link }}" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                        <p class="mb-0 float-start">{{ $video->created_at->format('d F Y') }}</p>
+                        <div class="float-end">
+                            <div class="btn-group">
+                                @include('utils.delete', [
+                                    'url' => url('data-manager/video', $video->id),
+                                ])
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endforeach
     </div>
-
     <!-- Modal Create-->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -78,14 +54,10 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-grup">
-                                    <label for="" class="control-label">link</label>
+                                    <label for="" class="control-label">Link</label>
                                     <input type="text" class="form-control" name="link">
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-grup">
-                            <label for="" class="control-label">Deskripsi</label>
-                            <textarea name="deskripsi" class="form-control"></textarea>
                         </div>
                         <button class="btn btn-sm btn-warning float-end mt-3"><i class="bx bx-save"> Save</i></button>
                     </form>

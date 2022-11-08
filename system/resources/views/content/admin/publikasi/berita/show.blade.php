@@ -15,13 +15,13 @@
                 <div class="col-md-9">
                     <div class="card">
                         <div class="card-header">
-                            Edit Data Berita
+                            Detail Data Berita
                         </div>
                         <div class="card-body">
                             <div class="col-md-9">
                                 <div class="card-body">
                                     <h3>{{ $berita->nama }}</h3>
-                                    <h6>Penulis  : {{ $berita->penulis }}</h6>
+                                    {{-- <h6>Penulis  : {{ $berita->penulis }}</h6> --}}
                                     <h6>Kategori : {{ $berita->kategori}}</h6>
                                     <hr>
                                     <p>Deskripsi : <br>

@@ -17,7 +17,6 @@ class IklanController extends Controller{
     function store()
     {
         $iklan = new Iklan();
-        $iklan->nama = request('nama');
         $iklan->handleUploadFoto();
         $iklan->deskripsi = request('deskripsi');
         $iklan->save();
@@ -37,10 +36,10 @@ class IklanController extends Controller{
     }
     function update(Iklan $iklan)
     {
-        $iklan->nama = request('nama');
-        $iklan->handleUploadFoto();
         $iklan->deskripsi = request('deskripsi');
         $iklan->save();
+        if (request('foto')) $iklan->handleUploadFoto();
+
         return redirect('data-manager/iklan')->with('success', 'Data Berhasil Diedit');
     }
     function destroy(Iklan $iklan)

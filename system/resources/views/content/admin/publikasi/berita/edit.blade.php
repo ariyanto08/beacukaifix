@@ -25,10 +25,6 @@
                                 <input type="text" class="form-control" name="nama" value="{{ $berita->nama }}">
                             </div>
                             <div class="form-group">
-                                <label for="" class="control-label">Penulis</label>
-                                <input type="text" class="form-control" name="penulis" value="{{ $berita->penulis }}">
-                            </div>
-                            <div class="form-group">
                                 <label for="" class="control-label">Kategori</label>
                                 <input type="text" class="form-control" name="kategori" value="{{ $berita->kategori }}">
                             </div>
