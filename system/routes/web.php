@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\Publikasi\BeritaController;
 use App\Http\Controllers\Admin\Profilweb\WilayahController;
 use App\Http\Controllers\Admin\Profilweb\MaklumatController;
 use App\Http\Controllers\Admin\Profilweb\StrukturController;
+use App\Http\Controllers\Admin\Profilweb\KomposisiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -151,4 +152,13 @@ Route::prefix('data-manager')->group(function(){
     Route::get('visi/{visi}/edit', [VisiController::class,'edit']);
     Route::put('visi/{visi}', [VisiController::class,'update']);
     Route::delete('visi/{visi}', [VisiController::class,'destroy']);
+
+    // Komposisi
+    Route::get('komposisi', [KomposisiController::class,'index']);
+    Route::get('komposisi/create', [KomposisiController::class,'create']);
+    Route::post('komposisi', [KomposisiController::class,'store']);
+    Route::get('komposisi/{komposisi}', [KomposisiController::class,'show']);
+    Route::get('komposisi/{komposisi}/edit', [KomposisiController::class,'edit']);
+    Route::put('komposisi/{komposisi}', [KomposisiController::class,'update']);
+    Route::delete('komposisi/{komposisi}', [KomposisiController::class,'destroy']);
 });

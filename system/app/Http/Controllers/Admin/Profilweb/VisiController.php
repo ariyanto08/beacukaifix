@@ -8,7 +8,8 @@ class VisiController extends Controller{
 
     function index(){
         $data['visi'] = Visi::where('level','Visi')->get();
-        $data['misi'] = Visi::where('level','misi')->get();
+        $data['misi'] = Visi::where('level','Misi')->get();
+        $data['motto'] = Visi::where('level','Motto')->get();
         return view('content.admin.profil-web.visi.index', $data);
     }
     function create()

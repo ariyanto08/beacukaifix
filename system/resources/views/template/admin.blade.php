@@ -71,7 +71,7 @@
 	<script src="{{url('public')}}/assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
     <script>
 		$(document).ready(function() {
-			$('#example').DataTable();
+			$('.datatable').DataTable();
 		  } );
 	</script>
 	<script>
