@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2022 at 03:32 AM
+-- Generation Time: Nov 11, 2022 at 06:36 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
+  `id` char(36) NOT NULL,
   `nip` bigint(20) DEFAULT NULL,
   `nama` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `nip`, `nama`, `email`, `password`, `created_at`, `updated_at`) VALUES
-(5, 12345678, 'Adee', 'ade@mail.co', '$2y$10$QfVLKF.tMBw7Cxp7dhHDHeFO8BAqMSeMoPqhTITCm9BGFrBwwcRVy', '2022-10-25 08:26:51', '2022-10-25 08:26:51');
+('97b6420f-b8ea-4eb2-bf12-248702072be8', 1234567, 'ajun', 'Ajun@mil.co', '$2y$10$aPcIcl2tehFpvLRf/Ptyi.dLiwDOm1uoUygM1L4kB1ZAxa5g8p1I2', '2022-11-10 07:28:01', '2022-11-10 07:28:01');
 
 -- --------------------------------------------------------
 
@@ -88,9 +88,9 @@ CREATE TABLE `faq` (
 --
 
 INSERT INTO `faq` (`id`, `pertanyaan`, `jawaban`, `kategori`, `created_at`, `updated_at`) VALUES
-(5, 'Kok bumi ada?', 'yo nda tau kok tanya saya', 'Penasaran', '2022-10-27 01:26:53', '2022-10-27 01:26:53'),
 (6, 'kenapa ujan turun nya air?', 'Mulanya, air menguap dari Bumi diserap oleh awan. Ketika menguap naik dari permukaan bumi ke atmosfer, air berubah dalam bentuk gas, dan kemudian berubah menjadi awan ketika mendingin dan mengembun. Di atmosfer, tetesan hujan mulai terbentuk dalam struktur berbentuk bola karena tegangan permukaan air.', 'pengiriman', '2022-10-27 01:31:11', '2022-10-27 01:31:11'),
-(7, 'Kenapa bumi bulat?', 'Mulanya, air menguap dari Bumi diserap oleh awan. Ketika menguap naik dari permukaan bumi ke atmosfer, air berubah dalam bentuk gas, dan kemudian berubah menjadi awan ketika mendingin dan mengembun. Di atmosfer, tetesan hujan mulai terbentuk dalam struktur berbentuk bola karena tegangan permukaan air.', 'bencana', '2022-10-27 01:32:41', '2022-10-27 01:32:41');
+(7, 'Kenapa bumi bulat?', 'Mulanya, air menguap dari Bumi diserap oleh awan. Ketika menguap naik dari permukaan bumi ke atmosfer, air berubah dalam bentuk gas, dan kemudian berubah menjadi awan ketika mendingin dan mengembun. Di atmosfer, tetesan hujan mulai terbentuk dalam struktur berbentuk bola karena tegangan permukaan air.', 'bencana', '2022-10-27 01:32:41', '2022-10-27 01:32:41'),
+(8, 'apakah kamu hidup?', 'Alhamdulillah', 'berkah', '2022-11-09 06:28:05', '2022-11-09 06:28:05');
 
 -- --------------------------------------------------------
 
@@ -112,7 +112,7 @@ CREATE TABLE `iklan` (
 --
 
 INSERT INTO `iklan` (`id`, `id_user`, `foto`, `deskripsi`, `created_at`, `updated_at`) VALUES
-(45, NULL, 'app/image/iklan/-1667377324-JvT4Z.png', 'Iklan bukan sembarang iklann', '2022-11-02 01:22:05', '2022-11-02 01:22:05');
+(46, NULL, 'app/image/iklan/-1668051929-KP3z6.jpg', 'grgrgrgg', '2022-11-09 20:45:30', '2022-11-09 20:45:30');
 
 -- --------------------------------------------------------
 
@@ -224,7 +224,7 @@ INSERT INTO `profil` (`id`, `id_user`, `link`, `created_at`, `updated_at`) VALUE
 
 CREATE TABLE `sop` (
   `id` int(11) NOT NULL,
-  `id_user` int(11) DEFAULT NULL,
+  `nama` varchar(255) DEFAULT NULL,
   `link` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -234,8 +234,8 @@ CREATE TABLE `sop` (
 -- Dumping data for table `sop`
 --
 
-INSERT INTO `sop` (`id`, `id_user`, `link`, `created_at`, `updated_at`) VALUES
-(2, NULL, 'https://drive.google.com/drive/folders/1NwBLCd4JQS3a5i8srPGNqT5EnKHI7SYGew', '2022-10-27 05:31:17', '2022-10-27 23:54:18');
+INSERT INTO `sop` (`id`, `nama`, `link`, `created_at`, `updated_at`) VALUES
+(4, 'gtersgse', 'https://drive.google.com/drive/folders/1NwBLCd4JQS3a5i8srPGNqT5EnKHI7SYG', '2022-11-08 19:50:09', '2022-11-08 19:51:51');
 
 -- --------------------------------------------------------
 
@@ -270,6 +270,7 @@ CREATE TABLE `user` (
   `nip` bigint(20) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
+  `level` varchar(255) DEFAULT NULL,
   `remember_token` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -279,9 +280,9 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `nama`, `nip`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(37, 'Arii', 28361312, 'ade@mail.co', '$2y$10$pndsm9QZQPAY5oQiHd5b0ORKrdqad79Sqmr4VQscPZdG12lA2d8FW', NULL, '2022-10-30 19:36:26', '2022-10-30 19:36:26'),
-(38, 'Dani', 123344343434, 'Dani@mail.co', '$2y$10$R5Ef79l6YBR.lwGMT/GRdepEVG4FImVy4yk7JzzM0DO.Fx7BRMFJ2', NULL, '2022-11-07 22:45:35', '2022-11-07 22:46:15');
+INSERT INTO `user` (`id`, `nama`, `nip`, `email`, `password`, `level`, `remember_token`, `created_at`, `updated_at`) VALUES
+(37, 'Arii', 1234567890, 'ade@mail.co', '$2y$10$fMi6PgwaQ9powtbLKF/2AOTR4qWc44NySu41jKOWlbs7Ykp2af70e', '1', NULL, '2022-10-30 19:36:26', '2022-11-11 04:20:04'),
+(39, 'Sakti', 987654321, 'sakti@mail.co', '$2y$10$S330QUA.ouIg/TvVvvdPiO1V1HhQ8tVmSY9uc41/yMV2cL.f8oCDW', '2', NULL, '2022-11-10 21:09:26', '2022-11-11 04:20:09');
 
 -- --------------------------------------------------------
 
@@ -447,28 +448,22 @@ ALTER TABLE `wilayah`
 --
 
 --
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
 -- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `faq`
 --
 ALTER TABLE `faq`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `iklan`
 --
 ALTER TABLE `iklan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `janji`
@@ -498,7 +493,7 @@ ALTER TABLE `profil`
 -- AUTO_INCREMENT for table `sop`
 --
 ALTER TABLE `sop`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `struktur`
@@ -510,7 +505,7 @@ ALTER TABLE `struktur`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `video`
@@ -522,7 +517,7 @@ ALTER TABLE `video`
 -- AUTO_INCREMENT for table `visi`
 --
 ALTER TABLE `visi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `wilayah`
