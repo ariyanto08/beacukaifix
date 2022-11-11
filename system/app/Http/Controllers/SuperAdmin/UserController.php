@@ -5,6 +5,7 @@ namespace App\Http\Controllers\SuperAdmin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 
+
 class UserController extends Controller{
     function index(){
         $data['list_user'] = User::all();
@@ -19,6 +20,7 @@ class UserController extends Controller{
         $user ->nip = request('nip');
         $user ->email = request('email');
         $user ->password = bcrypt (request('password'));
+        $user ->level = request('level');
         $user->save();
 
         return redirect('master-data/user')->with('success', 'Data Berhasil Ditambahkan');
@@ -36,6 +38,7 @@ class UserController extends Controller{
         $user ->nip = request('nip');
         $user ->email = request('email');
         if(request('password')) $user ->password = bcrypt (request('password'));
+        $user ->level = request('level');
         $user->save();
 
         return redirect('master-data/user')->with('success', 'Data Berhasil Dihapus');

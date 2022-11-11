@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SuperAdmin\UserController;
 use App\Http\Controllers\Admin\Peraturan\FaqController;
@@ -28,35 +30,17 @@ use App\Http\Controllers\Admin\Profilweb\KomposisiController;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
-});
+// login
+Route::get('login', [AuthController::class,'showLogin'])->name('login')->middleware('guest');
+Route::post('login', [AuthController::class,'loginproses']);
+Route::get('logout', [AuthController::class,'logout']);
 
-Route::get('dashboard-super-admin', [HomeController::class, 'showDashboardSuperAdmin']);
-Route::get('dashboard-admin', [HomeController::class, 'showDashboardAdmin']);
 
-// Tampilan Super Admin
-Route::prefix('master-data')->group(function(){
-    // Super Admin/Admin
-    Route::get('usersuper', [UserSuperController::class,'index']);
-    Route::get('usersuper/create', [UserSuperController::class,'create']);
-    Route::post('usersuper', [UserSuperController::class,'store']);
-    Route::get('usersuper/{admin}', [UserSuperController::class,'show']);
-    Route::get('usersuper/{admin}/edit', [UserSuperController::class,'edit']);
-    Route::put('usersuper/{admin}', [UserSuperController::class,'update']);
-    Route::delete('usersuper/{admin}', [UserSuperController::class,'destroy']);
-    // User
-    Route::get('user', [UserController::class,'index']);
-    Route::get('user/create', [UserController::class,'create']);
-    Route::post('user', [UserController::class,'store']);
-    Route::get('user/{user}', [UserController::class,'show']);
-    Route::get('user/{user}/edit', [UserController::class,'edit']);
-    Route::put('user/{user}', [UserController::class,'update']);
-    Route::delete('user/{user}', [UserController::class,'destroy']);
-
-});
 // Tampilan Admin
 Route::prefix('data-manager')->group(function(){
+    //Dashboard
+    Route::get('/', [HomeController::class, 'showDashboardAdmin']);
+    Route::get('dashboard-admin', [HomeController::class, 'showDashboardAdmin']);
     // Profil
     Route::get('profil', [ProfilController::class,'index']);
     Route::get('profil/create', [ProfilController::class,'create']);
@@ -162,3 +146,28 @@ Route::prefix('data-manager')->group(function(){
     Route::put('komposisi/{komposisi}', [KomposisiController::class,'update']);
     Route::delete('komposisi/{komposisi}', [KomposisiController::class,'destroy']);
 });
+
+// Tampilan Super Admin
+Route::prefix('master-data')->group(function(){
+    // Dashboard
+    Route::get('/', [HomeController::class, 'showDashboardSuperAdmin']);
+    Route::get('dashboard-super-admin', [HomeController::class, 'showDashboardSuperAdmin']);
+    // Super Admin/Admin
+    Route::get('usersuper', [UserSuperController::class,'index']);
+    Route::get('usersuper/create', [UserSuperController::class,'create']);
+    Route::post('usersuper', [UserSuperController::class,'store']);
+    Route::get('usersuper/{admin}', [UserSuperController::class,'show']);
+    Route::get('usersuper/{admin}/edit', [UserSuperController::class,'edit']);
+    Route::put('usersuper/{admin}', [UserSuperController::class,'update']);
+    Route::delete('usersuper/{admin}', [UserSuperController::class,'destroy']);
+    // User
+    Route::get('user', [UserController::class,'index']);
+    Route::get('user/create', [UserController::class,'create']);
+    Route::post('user', [UserController::class,'store']);
+    Route::get('user/{user}', [UserController::class,'show']);
+    Route::get('user/{user}/edit', [UserController::class,'edit']);
+    Route::put('user/{user}', [UserController::class,'update']);
+    Route::delete('user/{user}', [UserController::class,'destroy']);
+
+});
+

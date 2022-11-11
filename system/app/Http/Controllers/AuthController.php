@@ -2,27 +2,43 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Admin;
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    function login()
+    function showLogin()
     {
         return view('login');
     }
 
     function loginproses()
     {
-        if(auth()->guard('user')->attempt(['nip' => request('nip'),('password')])){
-            return redirect('menu/dashboard-admin');
+
+        if (Auth::attempt(['nip' => request('nip'), 'password' => request('password')])) {
+            $user = Auth::user();
+            if ($user->level == 1) return redirect('master-data/dashboard-super-admin')->with('success', 'Berhasil Login Sebagai Admin');
+            if ($user->level == 2) return redirect('data-manager/dashboard-admin')->with('success', 'Berhasil Login Sebagai Operasional');
+        } else {
+            return back()->with('warning', 'Login Error!');
         }
+        // if (auth()->attempt(['nip' => request('nip'), 'password' => request('password')])) {
+        //     return redirect('data-manager/dashboard-admin')->with('success', 'Login Berhasil');
+        // }
+
+        // if (auth()->guard('admin')->attempt(['nip' => request('nip'), 'password' => request('password')])) {
+        //     return redirect('master-data/dashboard-super-admin')->with('success', 'Login Berhasil');
+        // }
+
+
     }
 
     function logout()
     {
-        Auth()->guard('user');
-        return redirect('login');
+        Auth()->logout();
+        return redirect('login')->with('warning', 'Anda Telah Logout!');
     }
 }

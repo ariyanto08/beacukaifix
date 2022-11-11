@@ -26,6 +26,7 @@
                         <thead>
                             <tr>
                                 <th>No</th>
+                                <th>Keterangan</th>
                                 <th>Link</th>
                                 <th>Aksi</th>
                             </tr>
@@ -34,9 +35,13 @@
                             @foreach ($list_sop as $sop)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    {{-- <td>{{ $sop->nama}}</td> --}}
+                                    <td>{{ $sop->nama}}</td>
                                     <td>{{ $sop->link}}</td>
                                     <td>
+                                        <div class="btn-group">
+                                            <a href="{{ url('data-manager/sop', $sop->id) }}" class="btn btn-info"
+                                                title="Show"><i class="bx bx-detail"></i></a>
+                                        </div>
                                         <div class="btn-group">
                                             <a href="{{ url('data-manager/sop', $sop->id) }}/edit"
                                                 class="btn btn-warning" title="Edit"><i
@@ -68,6 +73,10 @@
                 <div class="modal-body">
                     <form action="{{ url('data-manager/sop') }}" method="post">
                         @csrf
+                        <div class="form-grup">
+                            <label for="" class="control-label">Keterangan</label>
+                            <input type="text" class="form-control" name="nama">
+                        </div>
                         <div class="form-grup">
                             <label for="" class="control-label">Link</label>
                             <input type="text" class="form-control" name="link">

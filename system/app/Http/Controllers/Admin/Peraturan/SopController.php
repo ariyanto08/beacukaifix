@@ -17,6 +17,7 @@ class SopController extends Controller{
     function store()
     {
         $sop = new Sop();
+        $sop->nama = request('nama');
         $sop->link = request('link');
 
         $sop->save();
@@ -36,6 +37,7 @@ class SopController extends Controller{
     }
     function update(Sop $sop)
     {
+        $sop->nama = request('nama');
         $sop->link = request('link');
 
         $sop->save();

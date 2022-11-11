@@ -1,47 +1,47 @@
 @extends('template.admin')
 @section('content')
+    <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+        <div class="breadcrumb-title pe-3">Janji Layanan</div>
+        <div class="ps-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0 p-0">
+                    <li class="breadcrumb-item active" aria-current="page">Daftar Janji</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="ms-auto mt-4">
+            <div class="btn-group">
+                <a class="btn btn-light" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                    aria-expanded="false" aria-controls="collapseExample"><i class="bx bx-plus me-1"></i>
+                    Add New Janji</a>
+            </div>
+        </div>
+    </div>
+    <!-- Collapse Create-->
+    <div class="col-12">
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <form action="{{ url('data-manager/janji') }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-grup">
+                        <label for="" class="control-label">Link</label>
+                        <input type="text" class="form-control" name="link">
+                    </div>
+                    <div class="form-grup">
+                        <label for="" class="control-label">Gambar</label>
+                        <input type="file" class="form-control" name="gambar" accept="png,jpg,svg">
+                    </div>
+                    <button class="btn btn-warning float-end mt-3"><i class="bx bx-save"> Save</i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <div class="card">
-            <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-                <div class="breadcrumb-title pe-3">Janji Layanan</div>
-                <div class="ps-3">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb mb-0 p-0">
-                            <li class="breadcrumb-item active" aria-current="page">Daftar Link</li>
-                        </ol>
-                    </nav>
-                </div>
-                <div class="ms-auto mt-4">
-                    <div class="btn-group">
-                        <a class="btn btn-light" data-bs-toggle="collapse" href="#collapseExample" role="button"
-                            aria-expanded="false" aria-controls="collapseExample"><i class="bx bx-plus me-1"></i>
-                            Add New Link</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Collapse Create-->
-            <div class="col-12">
-                <div class="collapse" id="collapseExample">
-                    <div class="card card-body">
-                        <form action="{{ url('data-manager/janji') }}" method="post" enctype="multipart/form-data">
-                            @csrf
-                            <div class="form-grup">
-                                <label for="" class="control-label">Link</label>
-                                <input type="text" class="form-control" name="link">
-                            </div>
-                            <div class="form-grup">
-                                <label for="" class="control-label">Gambar</label>
-                                <input type="file" class="form-control" name="gambar" accept="png,jpg">
-                            </div>
-                            <button class="btn btn-warning float-end mt-3"><i class="bx bx-save"> Save</i></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
             <div class="card-body">
                 <div class="table-responsive">
-                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                    <table class="table datatable table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
                                 <th>No</th>

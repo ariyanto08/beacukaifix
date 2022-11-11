@@ -19,7 +19,7 @@
                             </div>
                             <div class="form-grup">
                                 <label for="" class="control-label">Gambar</label>
-                                <input type="file" class="form-control" name="gambar" accept="png,jpg">
+                                <input type="file" class="form-control" name="gambar" accept="png,jpg,svg">
                             </div>
                             <button class="btn-warning float-end btn btn-sm mt-3"><i class="bx bx-save"></i> Save </button>
                         </form>

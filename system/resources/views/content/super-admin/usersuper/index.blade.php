@@ -73,7 +73,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="{{ url('master-data/usersupersuper') }}" method="post">
+                    <form action="{{ url('master-data/usersuper') }}" method="post">
                         @csrf
                         <div class="form-group">
                             <label for="" class="control-label">Nama</label>

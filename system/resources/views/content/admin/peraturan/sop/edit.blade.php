@@ -13,6 +13,10 @@
                         <form action="{{ url('data-manager/sop', $sop->id) }}" method="post">
                             @csrf
                             @method('PUT')
+                            <div class="form-grup">
+                                <label for="" class="control-label">Keterangan</label>
+                                <input type="text" class="form-control" name="nama" value="{{ $sop->nama }}">
+                            </div>
                             <div class="form-group">
                                 <label for="" class="control-label">Link</label>
                                 <input type="text" class="form-control" name="link" value="{{ $sop->link }}">

@@ -11,10 +11,4 @@ class HomeController extends Controller{
         return view('menu.dashboard-admin');
     }
 
-
-
-    function showIndexSuper(){
-        return view('content.super-admin.usersuper.index');
-    }
-
 }

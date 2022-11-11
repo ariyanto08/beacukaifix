@@ -32,7 +32,7 @@
                                 <div class="col-md-12">
                                     <div class="form-grup">
                                         <label for="" class="control-label">Foto</label>
-                                        <input type="file" class="form-control" name="foto" accept="png,jpg" value="{{ url('public',$berita->foto) }}">
+                                        <input type="file" class="form-control" name="foto" accept="png,jpg,svg" value="{{ url('public',$berita->foto) }}">
                                     </div>
                                 </div>
                             </div>

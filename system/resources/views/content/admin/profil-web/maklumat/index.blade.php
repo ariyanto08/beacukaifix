@@ -67,7 +67,7 @@
                             <div class="col-md-12">
                                 <div class="form-grup">
                                     <label for="" class="control-label">Gambar</label>
-                                    <input type="file" class="form-control" name="gambar" accept="png,jpg">
+                                    <input type="file" class="form-control" name="gambar" accept="png,jpg,svg">
                                 </div>
                             </div>
                         </div>
