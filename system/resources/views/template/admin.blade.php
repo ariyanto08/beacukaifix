@@ -23,7 +23,7 @@
 	<link rel="stylesheet" href="{{url('public')}}/assets/css/dark-theme.css" />
 	<link rel="stylesheet" href="{{url('public')}}/assets/css/semi-dark.css" />
 	<link rel="stylesheet" href="{{url('public')}}/assets/css/header-colors.css" />
-	<title>BeaCukai - Operational</title>
+	<title>BeaCukai - Operasional</title>
 </head>
 
 <body class="bg-theme bg-theme2">

@@ -37,7 +37,7 @@
                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="{{ url('public') }}/assets/images/logo-FIX.png" class="user-img" alt="user avatar">
                     <div class="user-info ps-3">
-                        <p class="user-name mb-0"></p>
+                        <p class="user-name mb-0">{{auth()->user()->nama}}</p>
                         <p class="designattion mb-0">Admin</p>
                     </div>
                 </a>

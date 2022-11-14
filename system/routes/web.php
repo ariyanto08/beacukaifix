@@ -37,7 +37,7 @@ Route::get('logout', [AuthController::class,'logout']);
 
 
 // Tampilan Admin
-Route::prefix('data-manager')->group(function(){
+Route::prefix('data-manager')->middleware('auth')->group(function(){
     //Dashboard
     Route::get('/', [HomeController::class, 'showDashboardAdmin']);
     Route::get('dashboard-admin', [HomeController::class, 'showDashboardAdmin']);
@@ -148,18 +148,11 @@ Route::prefix('data-manager')->group(function(){
 });
 
 // Tampilan Super Admin
-Route::prefix('master-data')->group(function(){
+Route::prefix('master-data')->middleware('auth')->group(function(){
     // Dashboard
     Route::get('/', [HomeController::class, 'showDashboardSuperAdmin']);
     Route::get('dashboard-super-admin', [HomeController::class, 'showDashboardSuperAdmin']);
-    // Super Admin/Admin
-    Route::get('usersuper', [UserSuperController::class,'index']);
-    Route::get('usersuper/create', [UserSuperController::class,'create']);
-    Route::post('usersuper', [UserSuperController::class,'store']);
-    Route::get('usersuper/{admin}', [UserSuperController::class,'show']);
-    Route::get('usersuper/{admin}/edit', [UserSuperController::class,'edit']);
-    Route::put('usersuper/{admin}', [UserSuperController::class,'update']);
-    Route::delete('usersuper/{admin}', [UserSuperController::class,'destroy']);
+    
     // User
     Route::get('user', [UserController::class,'index']);
     Route::get('user/create', [UserController::class,'create']);

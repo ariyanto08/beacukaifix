@@ -19,17 +19,11 @@
             </a>
         </li>
         <li>
-            <a href="{{url('master-data/usersuper')}}">
+            <a href="{{url('master-data/user')}}">
                 <div class="parent-icon"><i class="bx bx-user"></i>
                 </div>
-                <div class="menu-title">Akun Admin</div>
-            </a>
-        </li>
-        <li>
-            <a href="{{url('master-data/user')}}">
-                <div class="parent-icon"><i class="bx bx-user-pin"></i>
+                <div class="menu-title">Accounts
                 </div>
-                <div class="menu-title">Akun Operasional</div>
             </a>
         </li>
     </ul>

@@ -8,7 +8,8 @@ use App\Models\User;
 
 class UserController extends Controller{
     function index(){
-        $data['list_user'] = User::all();
+        $data['admin'] =User::where('level','1')->get();
+        $data['operasional'] =User::where('level','2')->get();
         return view('content.super-admin.user.index',$data);
     }
     function create(){

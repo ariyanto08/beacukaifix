@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -25,20 +24,13 @@ class AuthController extends Controller
         } else {
             return back()->with('warning', 'Login Error!');
         }
-        // if (auth()->attempt(['nip' => request('nip'), 'password' => request('password')])) {
-        //     return redirect('data-manager/dashboard-admin')->with('success', 'Login Berhasil');
-        // }
-
-        // if (auth()->guard('admin')->attempt(['nip' => request('nip'), 'password' => request('password')])) {
-        //     return redirect('master-data/dashboard-super-admin')->with('success', 'Login Berhasil');
-        // }
-
 
     }
 
     function logout()
     {
-        Auth()->logout();
+        Auth::logout();
+        Auth::guard('admin')->logout();
         return redirect('login')->with('warning', 'Anda Telah Logout!');
     }
 }

@@ -21,7 +21,7 @@
     <title>BCukai Ketapang - LOGIN</title>
 </head>
 
-<body background="{{ url('public') }}/assets/images/bg-themes/2.png">
+<body class="bg-theme bg-theme2">
     <!--wrapper-->
     <div class="wrapper">
         <div class="section-authentication-signin d-flex align-items-center justify-content-center my-5 my-lg-0">
