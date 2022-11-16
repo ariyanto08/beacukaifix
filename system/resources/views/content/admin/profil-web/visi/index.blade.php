@@ -34,7 +34,7 @@
                     </div>
                     <div class="form-grup">
                         <label for="" class="control-label">Isi</label>
-                        <textarea name="deskripsi" class="form-control"></textarea>
+                        <textarea id="mytextarea" name="deskripsi" class="form-control"></textarea>
                     </div>
                     <button class="btn btn-warning float-end mt-3"><i class="bx bx-save"> Save</i></button>
                 </form>
@@ -61,7 +61,7 @@
                                     @foreach ($visi as $visi)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{!!substr(nl2br($visi->deskripsi),0,40)!!}...</td>
+                                            <td>{!!substr(nl2br($visi->deskripsi),0,50)!!}</td>
                                             <td>
                                                 <div class="btn-group">
                                                     <a href="{{ url('data-manager/visi', $visi->id) }}" class="btn btn-info"
@@ -105,7 +105,7 @@
                                     @foreach ($misi as $misi)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{!!substr(nl2br($misi->deskripsi),0,40)!!}...</td>
+                                            <td>{!!substr(nl2br($misi->deskripsi),0,50)!!}</td>
                                             <td>
                                                 <div class="btn-group">
                                                     <a href="{{ url('data-manager/visi', $misi->id) }}" class="btn btn-info"

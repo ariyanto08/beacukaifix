@@ -13,7 +13,7 @@
                 <div class="accordion">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
-                            <p class="accordion-button">
+                            <p>
                                 {!!nl2br($visi->deskripsi)!!}
                             </p>
                         </h2>
