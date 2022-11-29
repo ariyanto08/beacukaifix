@@ -29,12 +29,17 @@
                         <select class="form-select" id="inputGroupSelect01" name="level">
                             <option selected>Pilih Sebagai...</option>
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <option value="1">Admin</option>
                             <option value="2">Operational</option>
 =======
                             <option value="Admin">Admin</option>
                             <option value="Operational">Operational</option>
 >>>>>>> 966aa1e4c2163ecda0e3de8a473a123709277b4a
+=======
+                            <option value="1">Admin</option>
+                            <option value="2">Operational</option>
+>>>>>>> 746bdb25e3b99bb6e3c807318e6b5d5b4c43b74c
                         </select>
                     </div>
                     <div class="form-group">
@@ -59,10 +64,14 @@
         </div>
         <div class="row">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <div class="">
 =======
             <div class="col-md-6">
 >>>>>>> 966aa1e4c2163ecda0e3de8a473a123709277b4a
+=======
+            <div class="">
+>>>>>>> 746bdb25e3b99bb6e3c807318e6b5d5b4c43b74c
                 <div class="header">
                     <h4>User Admin</h4>
                 </div>
@@ -90,10 +99,6 @@
                                             <td>{{ $admin->level_string }}</td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{ url('master-data/user', $admin->id) }}" class="btn btn-info"
-                                                        title="Info"><i class="bx bx-detail"></i></a>
-                                                </div>
-                                                <div class="btn-group">
                                                     <a href="{{ url('master-data/user', $admin->id) }}/edit"
                                                         class="btn btn-warning" title="Edit"><i
                                                             class="bx bx-edit"></i></a>
@@ -113,11 +118,18 @@
                 </div>
             </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <hr>
             <div class="">
 =======
             <div class="col-md-6">
 >>>>>>> 966aa1e4c2163ecda0e3de8a473a123709277b4a
+=======
+        </div>
+        <hr>
+        <div class="row">
+            <div class="">
+>>>>>>> 746bdb25e3b99bb6e3c807318e6b5d5b4c43b74c
                 <div class="header">
                     <h4>User Operasional</h4>
                 </div>
@@ -144,10 +156,6 @@
                                             <td>{{ $operasional->email }}</td>
                                             <td>{{ $operasional->level_string }}</td>
                                             <td>
-                                                <div class="btn-group">
-                                                    <a href="{{ url('master-data/user', $operasional->id) }}"
-                                                        class="btn btn-info" title="Info"><i class="bx bx-detail"></i></a>
-                                                </div>
                                                 <div class="btn-group">
                                                     <a href="{{ url('master-data/user', $operasional->id) }}/edit"
                                                         class="btn btn-warning" title="Edit"><i class="bx bx-edit"></i></a>

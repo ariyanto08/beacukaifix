@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use App\Models\User;
+=======
+>>>>>>> 746bdb25e3b99bb6e3c807318e6b5d5b4c43b74c
 use App\Models\Iklan;
 use App\Models\Video;
 use App\Models\Berita;
