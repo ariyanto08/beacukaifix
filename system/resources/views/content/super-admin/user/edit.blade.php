@@ -6,7 +6,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Edit Data Operator</h4>
+                <h4 class="card-title">Edit Data User</h4>
             </div>
             <div class="card-body">
                 <form action="{{url('master-data/user',$user->id)}}" method="post">

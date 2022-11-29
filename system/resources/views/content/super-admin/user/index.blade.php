@@ -28,8 +28,8 @@
                         <label class="input-group-text" for="inputGroupSelect01">Peran</label>
                         <select class="form-select" id="inputGroupSelect01" name="level">
                             <option selected>Pilih Sebagai...</option>
-                            <option value="Admin">Admin</option>
-                            <option value="Operational">Operational</option>
+                            <option value="1">Admin</option>
+                            <option value="2">Operational</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -53,7 +53,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="">
                 <div class="header">
                     <h4>User Admin</h4>
                 </div>
@@ -81,10 +81,6 @@
                                             <td>{{ $admin->level_string }}</td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{ url('master-data/user', $admin->id) }}" class="btn btn-info"
-                                                        title="Info"><i class="bx bx-detail"></i></a>
-                                                </div>
-                                                <div class="btn-group">
                                                     <a href="{{ url('master-data/user', $admin->id) }}/edit"
                                                         class="btn btn-warning" title="Edit"><i
                                                             class="bx bx-edit"></i></a>
@@ -103,7 +99,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+        </div>
+        <hr>
+        <div class="row">
+            <div class="">
                 <div class="header">
                     <h4>User Operasional</h4>
                 </div>
@@ -130,10 +129,6 @@
                                             <td>{{ $operasional->email }}</td>
                                             <td>{{ $operasional->level_string }}</td>
                                             <td>
-                                                <div class="btn-group">
-                                                    <a href="{{ url('master-data/user', $operasional->id) }}"
-                                                        class="btn btn-info" title="Info"><i class="bx bx-detail"></i></a>
-                                                </div>
                                                 <div class="btn-group">
                                                     <a href="{{ url('master-data/user', $operasional->id) }}/edit"
                                                         class="btn btn-warning" title="Edit"><i class="bx bx-edit"></i></a>

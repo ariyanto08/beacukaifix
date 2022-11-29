@@ -18,7 +18,6 @@ class BeritaController extends Controller{
     {
         $berita = new Berita();
         $berita->nama = request('nama');
-        // $berita->penulis = request('penulis');
         $berita->kategori = request('kategori');
         $berita->deskripsi = request('deskripsi');
         $berita->save();
@@ -40,7 +39,6 @@ class BeritaController extends Controller{
     function update(Berita $berita)
     {
         $berita->nama = request('nama');
-        // $berita->penulis = request('penulis');
         $berita->kategori = request('kategori');
         $berita->deskripsi = request('deskripsi');
         $berita->save();
