@@ -28,8 +28,13 @@
                         <label class="input-group-text" for="inputGroupSelect01">Peran</label>
                         <select class="form-select" id="inputGroupSelect01" name="level">
                             <option selected>Pilih Sebagai...</option>
+<<<<<<< HEAD
                             <option value="1">Admin</option>
                             <option value="2">Operational</option>
+=======
+                            <option value="Admin">Admin</option>
+                            <option value="Operational">Operational</option>
+>>>>>>> 966aa1e4c2163ecda0e3de8a473a123709277b4a
                         </select>
                     </div>
                     <div class="form-group">
@@ -53,7 +58,11 @@
             </div>
         </div>
         <div class="row">
+<<<<<<< HEAD
             <div class="">
+=======
+            <div class="col-md-6">
+>>>>>>> 966aa1e4c2163ecda0e3de8a473a123709277b4a
                 <div class="header">
                     <h4>User Admin</h4>
                 </div>
@@ -103,8 +112,12 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
             <hr>
             <div class="">
+=======
+            <div class="col-md-6">
+>>>>>>> 966aa1e4c2163ecda0e3de8a473a123709277b4a
                 <div class="header">
                     <h4>User Operasional</h4>
                 </div>

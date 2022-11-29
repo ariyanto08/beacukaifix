@@ -61,7 +61,11 @@
                                     @foreach ($visi as $visi)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
+<<<<<<< HEAD
                                             <td>{!! substr(nl2br($visi->deskripsi), 0, 40) !!}...</td>
+=======
+                                            <td>{!!substr(nl2br($visi->deskripsi),0,50)!!}</td>
+>>>>>>> 966aa1e4c2163ecda0e3de8a473a123709277b4a
                                             <td>
                                                 <div class="btn-group">
                                                     <a href="{{ url('data-manager/visi', $visi->id) }}" class="btn btn-info"
@@ -105,7 +109,11 @@
                                     @foreach ($misi as $misi)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
+<<<<<<< HEAD
                                             <td>{!! substr(nl2br($misi->deskripsi), 0, 40) !!}...</td>
+=======
+                                            <td>{!!substr(nl2br($misi->deskripsi),0,50)!!}</td>
+>>>>>>> 966aa1e4c2163ecda0e3de8a473a123709277b4a
                                             <td>
                                                 <div class="btn-group">
                                                     <a href="{{ url('data-manager/visi', $misi->id) }}" class="btn btn-info"

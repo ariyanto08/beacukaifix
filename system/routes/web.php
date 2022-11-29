@@ -162,7 +162,11 @@ Route::prefix('master-data')->middleware('auth')->group(function(){
     // Dashboard
     Route::get('/', [HomeController::class, 'showDashboardSuperAdmin']);
     Route::get('dashboard-super-admin', [HomeController::class, 'showDashboardSuperAdmin']);
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 966aa1e4c2163ecda0e3de8a473a123709277b4a
     // User
     Route::get('user', [UserController::class,'index']);
     Route::get('user/create', [UserController::class,'create']);
