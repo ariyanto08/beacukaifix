@@ -60,6 +60,12 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-grup">
+                                    <label for="" class="control-label">Nama</label>
+                                    <input type="text" class="form-control" name="nama">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-grup">
                                     <label for="" class="control-label">Gambar</label>
                                     <input type="file" class="form-control" name="gambar" accept="png,jpg,svg">
                                 </div>

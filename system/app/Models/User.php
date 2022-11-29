@@ -14,4 +14,7 @@ class User extends Authenticatable
 
     protected $table = 'user';
 
+    function getLevelStringAttribute(){
+        return ($this->level == 1) ? "Admin" : "Operasional";
+    }
 }

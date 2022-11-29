@@ -32,6 +32,10 @@
                                 <span>Kategori: {{ $berita->kategori }}</span>
                                 <div class="float-end">
                                     <div class="btn-group">
+                                        <a href="{{ url('data-manager/berita', $berita->id) }}" class="btn btn-info"
+                                            title="Show"><i class="bx bx-detail"></i></a>
+                                    </div>
+                                    <div class="btn-group">
                                         <a href="{{ url('data-manager/berita', $berita->id) }}/edit" class="btn btn-warning"
                                             title="Edit"><i class="bx bx-edit"></i></a>
                                     </div>

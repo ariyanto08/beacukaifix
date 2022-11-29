@@ -14,6 +14,15 @@ class BeritaController extends Controller{
     {
         return view('content.admin.publikasi.berita.create');
     }
+
+    // function Beritafilter()
+    // {
+    //     $nama = request('nama');
+    //     $data['nama'] = $nama;
+    //     $data['list_berita'] = Berita::where('nama', 'like', "%$nama%")->get();
+    //     return view('content.front.publikasi.berita', $data);
+    // }
+
     function store()
     {
         $berita = new Berita();
@@ -34,6 +43,7 @@ class BeritaController extends Controller{
     }
     function show($berita)
     {
+        $data['berita'] = Berita::find($berita);
         $data['berita'] = Berita::find($berita);
         return view('content.admin.publikasi.berita.show', $data);
     }

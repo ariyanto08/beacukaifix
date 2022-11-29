@@ -8,7 +8,7 @@
                 <div class="d-flex align-items-center">
                     <div>
                         <p class="mb-0">Total User Operasional</p>
-                        <h4 class="my-1">8.4K</h4>
+                        <h4 class="my-1">{{ $user}}</h4>
                     </div>
                     <div class="widgets-icons ms-auto"><i class='bx bxs-group'></i>
                     </div>
@@ -17,5 +17,4 @@
         </div>
     </div>
 </div>
-{{-- <h4>Dashboard</h4> --}}
 @endsection

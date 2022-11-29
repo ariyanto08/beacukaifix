@@ -34,7 +34,7 @@
                     </div>
                     <div class="form-grup">
                         <label for="" class="control-label">Isi</label>
-                        <textarea name="deskripsi" class="form-control"></textarea>
+                        <textarea id="mytextarea" name="deskripsi" class="form-control"></textarea>
                     </div>
                     <button class="btn btn-warning float-end mt-3"><i class="bx bx-save"> Save</i></button>
                 </form>
@@ -61,7 +61,7 @@
                                     @foreach ($visi as $visi)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{!!substr(nl2br($visi->deskripsi),0,40)!!}...</td>
+                                            <td>{!! substr(nl2br($visi->deskripsi), 0, 40) !!}...</td>
                                             <td>
                                                 <div class="btn-group">
                                                     <a href="{{ url('data-manager/visi', $visi->id) }}" class="btn btn-info"
@@ -105,7 +105,7 @@
                                     @foreach ($misi as $misi)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{!!substr(nl2br($misi->deskripsi),0,40)!!}...</td>
+                                            <td>{!! substr(nl2br($misi->deskripsi), 0, 40) !!}...</td>
                                             <td>
                                                 <div class="btn-group">
                                                     <a href="{{ url('data-manager/visi', $misi->id) }}" class="btn btn-info"
@@ -113,7 +113,8 @@
                                                 </div>
                                                 <div class="btn-group">
                                                     <a href="{{ url('data-manager/visi', $misi->id) }}/edit"
-                                                        class="btn btn-warning" title="Edit"><i class="bx bx-edit"></i></a>
+                                                        class="btn btn-warning" title="Edit"><i
+                                                            class="bx bx-edit"></i></a>
                                                 </div>
                                                 <div class="btn-group">
                                                     @include('utils.delete', [
@@ -148,15 +149,16 @@
                                     @foreach ($motto as $motto)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{!!substr(nl2br($motto->deskripsi),0,70)!!}</td>
+                                            <td>{!! substr(nl2br($motto->deskripsi), 0, 70) !!}</td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{ url('data-manager/visi', $motto->id) }}" class="btn btn-info"
-                                                        title="Show"><i class="bx bx-detail"></i></a>
+                                                    <a href="{{ url('data-manager/visi', $motto->id) }}"
+                                                        class="btn btn-info" title="Show"><i class="bx bx-detail"></i></a>
                                                 </div>
                                                 <div class="btn-group">
                                                     <a href="{{ url('data-manager/visi', $motto->id) }}/edit"
-                                                        class="btn btn-warning" title="Edit"><i class="bx bx-edit"></i></a>
+                                                        class="btn btn-warning" title="Edit"><i
+                                                            class="bx bx-edit"></i></a>
                                                 </div>
                                                 <div class="btn-group">
                                                     @include('utils.delete', [

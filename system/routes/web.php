@@ -18,7 +18,17 @@ use App\Http\Controllers\Admin\Profilweb\WilayahController;
 use App\Http\Controllers\Admin\Profilweb\MaklumatController;
 use App\Http\Controllers\Admin\Profilweb\StrukturController;
 use App\Http\Controllers\Admin\Profilweb\KomposisiController;
-
+use App\Http\Controllers\Client\ClientController;
+use App\Http\Controllers\Client\Profil\ProfilwebController;
+use App\Http\Controllers\Client\Profil\VisiwebController;
+use App\Http\Controllers\Client\Profil\StrukturwebController;
+use App\Http\Controllers\Client\Profil\KomposisiwebController;
+use App\Http\Controllers\Client\Profil\WilayahwebController;
+use App\Http\Controllers\Client\Profil\JanjiwebController;
+use App\Http\Controllers\Client\Profil\MaklumatwebController;
+use App\Http\Controllers\Client\Publikasi\BeritawebController;
+use App\Http\Controllers\Client\Publikasi\VideowebController;
+use App\Http\Controllers\Client\Peraturan\SopwebController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,7 +47,7 @@ Route::get('logout', [AuthController::class,'logout']);
 
 
 // Tampilan Admin
-Route::prefix('data-manager')->group(function(){
+Route::prefix('data-manager')->middleware('auth')->group(function(){
     //Dashboard
     Route::get('/', [HomeController::class, 'showDashboardAdmin']);
     Route::get('dashboard-admin', [HomeController::class, 'showDashboardAdmin']);
@@ -148,18 +158,11 @@ Route::prefix('data-manager')->group(function(){
 });
 
 // Tampilan Super Admin
-Route::prefix('master-data')->group(function(){
+Route::prefix('master-data')->middleware('auth')->group(function(){
     // Dashboard
     Route::get('/', [HomeController::class, 'showDashboardSuperAdmin']);
     Route::get('dashboard-super-admin', [HomeController::class, 'showDashboardSuperAdmin']);
-    // Super Admin/Admin
-    Route::get('usersuper', [UserSuperController::class,'index']);
-    Route::get('usersuper/create', [UserSuperController::class,'create']);
-    Route::post('usersuper', [UserSuperController::class,'store']);
-    Route::get('usersuper/{admin}', [UserSuperController::class,'show']);
-    Route::get('usersuper/{admin}/edit', [UserSuperController::class,'edit']);
-    Route::put('usersuper/{admin}', [UserSuperController::class,'update']);
-    Route::delete('usersuper/{admin}', [UserSuperController::class,'destroy']);
+
     // User
     Route::get('user', [UserController::class,'index']);
     Route::get('user/create', [UserController::class,'create']);
@@ -170,4 +173,26 @@ Route::prefix('master-data')->group(function(){
     Route::delete('user/{user}', [UserController::class,'destroy']);
 
 });
+
+
+// client
+Route::get('home', [ClientController::class,'showHome']);
+Route::get('hubungi', [ClientController::class,'showContact']);
+// client profil
+Route::get('profil/profil', [ProfilwebController::class,'showProfil']);
+Route::get('profil/visi', [VisiwebController::class,'showVisi']);
+Route::get('profil/struktur', [StrukturwebController::class,'showStruktur']);
+Route::get('profil/komposisi', [KomposisiwebController::class,'showKomposisi']);
+Route::get('profil/wilayah', [WilayahwebController::class,'showWilayah']);
+Route::get('profil/janji', [JanjiwebController::class,'showJanji']);
+Route::get('profil/maklumat', [MaklumatwebController::class,'showMaklumat']);
+// client berita
+Route::get('publikasi/berita', [BeritawebController::class,'showBerita']);
+Route::post('berita/filter', [BeritawebController::class, 'filter']);
+Route::get('publikasi/video', [VideowebController::class, 'showVideo']);
+Route::get('berita/detail/{berita}', [BeritawebController::class, 'showwebBerita']);
+// peraturan
+Route::get('peraturan/sop', [SopwebController::class,'showSop']);
+Route::get('peraturan/faq', [SopwebController::class,'showFaq']);
+
 

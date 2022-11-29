@@ -59,6 +59,8 @@
 	<!--start switcher-->
 	@include('utils.theme')
 	<!--end switcher-->
+    <!-- icon -->
+    <script src="https://unpkg.com/feather-icons"></script>
 	<!-- Bootstrap JS -->
 	<script src="{{url('public')}}/assets/js/bootstrap.bundle.min.js"></script>
 	<!--plugins-->
@@ -71,7 +73,7 @@
 	<script src="{{url('public')}}/assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
     <script>
 		$(document).ready(function() {
-			$('#example').DataTable();
+			$('.datatable').DataTable();
 		  } );
 	</script>
 	<script>
